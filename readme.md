@@ -1,11 +1,11 @@
-# MealsRater_API_Django
+# CoursesRater_API_Django
 
 # Business requirements as per the mockup 
 
-1- Meals list screen has the foloowing information
-    - Meal name
-    - Meal number of stars 
-    - Meals average rate 
+1- Course list screen has the foloowing information
+    - Course name
+    - Course number of stars 
+    - Courses average rate 
     - Login 
     - Register
     - showing already logged in user 
@@ -19,24 +19,24 @@
 Using Django REST frame work please implement the followings
 
 1- Models 
-    - Meal
+    - Course
     - Stars 
     - User
 
-2- validation if the user already rated the meal 
+2- validation if the user already rated the Course 
 
 3- validation to rate min 1 and max 5 
 
-4- CRUD API for Meals 
-    http://127.0.0.1:8000/api/meals
-    it should return the average rating and number of rating a long with the meal name and detail
+4- CRUD API for Courses 
+    http://127.0.0.1:8000/api/Courses
+    it should return the average rating and number of rating a long with the Course name and detail
 
 5- CRUD API for Stars 
     http://127.0.0.1:8000/api/stars
     no one should be able to use this crud for rating !!
 
 6- Rate API 
-    http://127.0.0.1:8000/api/meals/meal_pk/rate_meal
+    http://127.0.0.1:8000/api/Courses/Course_pk/rate_Course
     create and update API 
 
 7- Token authentication 
