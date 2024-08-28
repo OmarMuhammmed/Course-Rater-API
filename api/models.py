@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import uuid
 from django.core.validators import MaxValueValidator,MinValueValidator
-
+from django.db.models import Avg
 CATEGORIES = [
     ('Frontend Development', 'Frontend Development'),
     ('Backend Development', 'Backend Development'),
@@ -26,8 +26,24 @@ class Course(models.Model):
     category = models.CharField(max_length=50, choices=CATEGORIES,default=None)
     duration = models.FloatField(help_text="Duration of the course in hours")
 
+    _avg_rating = None
+
+    def num_of_rating(self):
+        return Rating.objects.filter(course=self).count()
+        
+    @property
+    def avg_rating(self):
+        if self._avg_rating is None:
+            avg_ratings = Rating.objects.filter(course=self).aggregate(Avg('stars'))
+            self._avg_rating = avg_ratings['stars__avg']
+        return self._avg_rating if self._avg_rating is not None else 0
+            
+    
     def __str__(self):
         return self.title
+
+
+
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

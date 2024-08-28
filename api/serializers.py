@@ -9,4 +9,12 @@ class RatingSerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = "__all__"
+        fields = ("id", 
+                  "title", 
+                  "instructor",
+                  "description",
+                  "category",
+                  "duration",
+                  "num_of_rating",
+                  "avg_rating",
+                  )
