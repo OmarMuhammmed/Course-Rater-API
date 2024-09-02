@@ -13,8 +13,12 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["course-rater-api-production.up.railway.app"]
-CSRF_TRUSTED_ORIGINS = ['https:course-rater-api-production.up.railway.app']
+ALLOWED_HOSTS = ['course-rater-api-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://course-rater-api-production.up.railway.app']
+CORS_ALLOWED_ORIGINS = [
+    'https://course-rater-api-production.up.railway.app',
+]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -41,9 +45,6 @@ INSTALLED_APPS = [
 
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://course-rater-api-production.up.railway.app",
-]
 
 
 MIDDLEWARE = [
