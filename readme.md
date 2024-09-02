@@ -1,49 +1,61 @@
-# CoursesRater_API_Django
 
-# Business requirements as per the mockup 
+# Course Rater API
 
-1- Course list screen has the foloowing information
-    - Course name
-    - Course number of stars 
-    - Courses average rate 
-    - Login 
-    - Register
-    - showing already logged in user 
+Course Rater API is a RESTful API that allows users to rate and review courses. The project aims to provide a system where users can evaluate courses, helping others make informed decisions about whether to enroll in a particular course.
 
-2- Popup error if the user already rated 
+## Features
 
-3- Add rate scree, stars 1 to 5 only and SAVE
+- **Add Courses:** Users can add new course information.
+- **Rate Courses:** Users can rate and review courses.
+- **View Ratings:** Users can view course ratings and reviews.
+- **Manage Ratings:** Administrators can manage course ratings and reviews.
+- **Custom Permissions:** Admin only list users and user olny edit your pofile .
+- **auth With Token :** can user Login with token genrated by system  .
 
 
-# Technical requirements 
-Using Django REST frame work please implement the followings
+## Requirements
 
-1- Models 
-    - Course
-    - Stars 
-    - User
+- Python 3.8 or higher
+- Django 4.x
+- Django REST Framework
+- SQLite3 (you can switch to PostgreSQL for production)
 
-2- validation if the user already rated the Course 
+## Local Setup
 
-3- validation to rate min 1 and max 5 
+Follow these steps to set up and run the project locally:
 
-4- CRUD API for Courses 
-    http://127.0.0.1:8000/api/Courses
-    it should return the average rating and number of rating a long with the Course name and detail
+1. **Clone the repository:**
 
-5- CRUD API for Stars 
-    http://127.0.0.1:8000/api/stars
-    no one should be able to use this crud for rating !!
+   ```bash
+   git clone https://github.com/OmarMuhammmed/Course-Rater-API.git
+   cd Course-Rater-API
+   ```
 
-6- Rate API 
-    http://127.0.0.1:8000/api/Courses/Course_pk/rate_Course
-    create and update API 
+2. **Create and activate a virtual environment:**
 
-7- Token authentication 
+   ```bash
+   python -m venv venv
+   
+   venv\Scripts\activate
+   ```
 
-8- Login and register API 
+3. **Install the dependencies:**
 
-9- Token request API 
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-10- Deploy to Heroku 
+4. **Set up the database:**
+
+   ```bash
+   python manage.py migrate
+   ```
+
+5. **Run the local server:**
+
+   ```bash
+   python manage.py runserver
+   ```
+
+   You can access the API at `http://127.0.0.1:8000/`.
 
